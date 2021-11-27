@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 JS Calculadora</title>
+    <link rel="shortcut icon" href="/assets/img/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/calculadora.css">
+</head>
+<body>
+<fieldset>
+    <legend>Calculadora</legend>
+    <p>Esta calculadora executa uma soma de dois valores inteiros.</p>
+    <form>
+            Valor 1: <input type="number" id="val1"><br><br>
+            Valor 2: <input type="number" id="val2"><br><br>
+            <input type="button" class="botao" value="Soma" onclick="somar()">
+            <input type="button" class="botao" value="Subtração" onclick="subtrair()">
+            <input type="button" class="botao" value="Multiplicação" onclick="multiplicar()">
+            <input type="button" class="botao" value="Divisão" onclick="dividir()">
+            <input type="reset"  class="botao" value="Limpar"><br><br>
+            Resultado: <p id="result"></p>
+    </form>
+</fieldset>
+    <script>
+            function somar() {
+                    let v1 = document.getElementById("val1").value; 
+                    let v2 = document.getElementById("val2").value; 
+                    let soma = parseInt(v1) + parseInt(v2); 
+                    document.getElementById("result").innerHTML = soma;
+            }
+
+            function subtrair() {
+                    let v1 = document.getElementById("val1").value;
+                    let v2 = document.getElementById("val2").value; 
+                    let subtrair = parseInt(v1) - parseInt(v2);
+                    document.getElementById("result").innerHTML = subtrair
+            }
+
+            function multiplicar() {
+                    let v1 = document.getElementById("val1").value;
+                    let v2 = document.getElementById("val2").value; 
+                    let multiplicar = parseInt(v1) * parseInt(v2);
+                    document.getElementById("result").innerHTML = multiplicar
+            }
+
+            function dividir() {
+                    let v1 = document.getElementById("val1").value;
+                    let v2 = document.getElementById("val2").value; 
+                    let dividir = parseInt(v1) / parseInt(v2);
+                    dividir = Math.floor(dividir);
+                    let resto = parseInt(v1) % parseInt(v2);
+                    dividir += resto == 0 ? '' : ' Resta: ' + resto;
+
+                    document.getElementById("result").innerHTML = dividir
+            }
+            </script>
+</body>
+</html>
